@@ -56,7 +56,8 @@ function startRecognition() {
 	    for (var i = event.resultIndex; i < event.results.length; ++i) {
 	    	text += event.results[i][0].transcript;
 	    }
-	   setInput(text);
+	   // setInput(text);
+	   send(text);
 	   stopRecognition();
 		// debugger
 
@@ -90,11 +91,11 @@ function switchRecognition() {
 	}
 }
 
-function setInput(text_data) {
-	text = "";
-	$("#input").val(text_data);
-	send(text_data);
-}
+// function setInput(text_data) {
+	
+// 	$("#input").val(text_data);
+// 	// send(text_data);
+// }
 
 function updateRec() {
 	$("#rec").text(recognition ? "Stop" : "Speak");
@@ -102,6 +103,7 @@ function updateRec() {
 
 function send(text_data) {
 	// var text = $("#input").val();
+	text = "";
 	$.ajax({
 		type: "POST",
 		url: baseUrl + "query/",
@@ -114,23 +116,23 @@ function send(text_data) {
 		data: JSON.stringify({ q: text_data, lang: "en" }),
 		success: function(data) {
 			prepareResponse(data);
-			setResponse(data.result.speech);
+			// setResponse(data.result.speech);
 
 		},
 		error: function() {
-			setResponse("Internal Server Error");
+			// setResponse("Internal Server Error");
 		}
 	});
-	setResponse("Loading...");
+	// setResponse("Loading...");
 }
 
-function setResponse(val) {
-	$("#response").text(val);
-}
+// function setResponse(val) {
+// 	$("#response").text(val);
+// }
 
 function prepareResponse(val) {
   var debugJSON = JSON.stringify(val, undefined, 2),
-      spokenResponse = val.result.speech;
+    spokenResponse = val.result.speech;
 
   respond(spokenResponse);
   // debugRespond(debugJSON);
@@ -147,7 +149,7 @@ function respond(val) {
     msg.voiceURI = "native";
     msg.text = val;
     msg.lang = "en-US";
-      window.speechSynthesis.speak(msg);
+    window.speechSynthesis.speak(msg);
 
     msg.onend = function (event) { 
     	// debugger
