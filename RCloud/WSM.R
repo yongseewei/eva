@@ -26,8 +26,8 @@ calculateWSM <- function(dataTable) {
     # Sort the table by score, descending order
     dataTable <- dataTable[with(dataTable, order(-Score)), ]
     
-    dataTableColNum = length(dataTable)
-    dataTableRowNum = nrow(dataTable)
+    dataTableColNum <- length(dataTable)
+    dataTableRowNum <- nrow(dataTable)
     
     # Loop Through each row
     stringTable <- ""
