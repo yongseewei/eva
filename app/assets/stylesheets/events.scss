@@ -1,3 +1,88 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.title {
+	margin-top: 70px;
+	#main-text {
+		font-size: 88px;
+		color: white;
+		text-align: center;
+	}
+}
+@media screen and (max-width: 768px) {
+	.title {
+		margin-top: 120px;
+		#main-text {
+			font-size: 60px;
+		}
+	}
+}
+.HolyGrail {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.HolyGrail-header {
+  z-index: 1;
+  color: #FFF !important;
+  font-size: 88px;
+  padding: 48px;
+}
+
+.HolyGrail-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+}
+
+.HolyGrail-content {
+  flex: 1;
+  height: 100%;
+}
+
+.HolyGrail-nav,
+.HolyGrail-ads {
+  /* 12em is the width of the columns */
+  flex: 0 0 12em;
+}
+
+.HolyGrail-nav {
+  /* put the nav on the left */
+  order: -1;
+}
+
+.question-context__choice {
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+  height: 124px;
+  width: 124px;
+  transition: background-color 0.2s;
+  position: relative;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.question-context__choice:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.question-context__choice:active {
+  background-color: rgba(255, 255, 255, 0.32);
+}
+.microphone {
+	text-align: center;
+	margin-top: 40px;
+	color: white;
+}
+.microphone-btn {
+	font-size: 80px !important;
+	text-align: center;
+}

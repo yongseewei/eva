@@ -43,7 +43,7 @@ body {
 
 .HolyGrail-header {
   z-index: 1;
-  color: #FFF;
+  color: #FFF !important;
   font-size: 88px;
   padding: 48px;
 }
@@ -73,12 +73,6 @@ body {
   order: -1;
 }
 
-.question-context {
-  display: flex;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.64);
-}
-
 .question-context__choice {
   margin: 16px;
   display: flex;
@@ -90,6 +84,8 @@ body {
   height: 124px;
   width: 124px;
   transition: background-color 0.2s;
+  position: relative;
+  color: rgba(255, 255, 255, 0.64);
 }
 
 .question-context__choice:hover {
