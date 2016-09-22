@@ -15,11 +15,16 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+//= require jquery-ui
 
 $(function() {
+	$(".question-context__choice").hide().slideDown();
 	$(document).on("click", ".question-context__choice", function() {
 		$(".HolyGrail-body").children().hide();
 		$(".HolyGrail-body").after('<ul class="list-group events"><li class="list-group-item">Hi</li><li class="list-group-item">Hello</li></ul>');
+		$(".list-group-item").draggable({
+			axis: "x"
+		});
 		$(".events").hide()
 		$(".events").slideDown();
 	});
@@ -27,9 +32,8 @@ $(function() {
 		event.preventDefault();
 		$(this).addClass("glow");
 		setTimeout(function() {
-
-			$(this).hide();
-			$(this).after('<i class="fa fa-spinner w3-spin" style="font-size:80px"></i>');
-		},1000);
+			$(".microphone i").hide();
+			$(".microphone i").after('<i class="fa fa-spinner w3-spin" style="font-size:80px"></i>');
+		},4000);
 	});
 });

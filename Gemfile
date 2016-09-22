@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-ui-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
