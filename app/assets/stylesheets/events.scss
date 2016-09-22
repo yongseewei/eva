@@ -121,22 +121,25 @@
 
 @-webkit-keyframes pulse {
   0% {
-    color: rgba(255,255,255,1);
+    background-color: dodgerblue;
     
   }
   100% {
-    color: rgba(255,255,255,0.24);
+    background-color: #1976d2;
     
   }
 }
   
 @-moz-keyframes pulse {
   0% {
-    color: rgba(255,255,255,1);
+    background-color: dodgerblue;
     
   }
   100% {
-    color: rgba(255,255,255,0.24);
+    background-color: #1976d2;
    
   }
+}
+.space {
+	height: 64px;
 }
