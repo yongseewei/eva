@@ -26,6 +26,7 @@ var baseUrl = "https://api.api.ai/v1/",
     messageSorry = "I'm sorry, I don't have the answer to that yet.";
 var accessToken = "b9d899a8ae0a4559adbc257dfe0403ec";
 var subscriptionKey = "655502d27d9f4d32b091fdbf67fe0cba";
+var text = ""
 
 $(document).ready(function() {
 	$("#input").keypress(function(event) {
@@ -35,9 +36,9 @@ $(document).ready(function() {
 		}
 	});
 // $("#rec").click(function(event) {
-	if (window.speechSynthesis.speaking == false){
+	// if (window.speechSynthesis.speaking == false){
 		switchRecognition();
-	}
+	// }
 	// });
 });
 
@@ -51,16 +52,23 @@ function startRecognition() {
 		updateRec();
 	};
 	recognition.onresult = function(event) {
-		var text = "";
+		text = "";
 	    for (var i = event.resultIndex; i < event.results.length; ++i) {
 	    	text += event.results[i][0].transcript;
 	    }
-	    setInput(text);
-		stopRecognition();
-	};
-	recognition.onend = function() {
+	   setInput(text);
+	   stopRecognition();
 		// debugger
+
+	};
+	recognition.onend = function(event) {
+				// debugger
+		// stopRecognition();
 		stopRecognition();
+
+		// if (text == ""){
+		// 	respond("I am still waiting");
+		// }
 	};
 	recognition.lang = "en-US";
 	recognition.start();
@@ -82,16 +90,17 @@ function switchRecognition() {
 	}
 }
 
-function setInput(text) {
-	$("#input").val(text);
-	send(text);
+function setInput(text_data) {
+	text = "";
+	$("#input").val(text_data);
+	send(text_data);
 }
 
 function updateRec() {
 	$("#rec").text(recognition ? "Stop" : "Speak");
 }
 
-function send(text) {
+function send(text_data) {
 	// var text = $("#input").val();
 	$.ajax({
 		type: "POST",
@@ -102,7 +111,7 @@ function send(text) {
 			"Authorization": "Bearer " + accessToken,
 			"ocp-apim-subscription-key": subscriptionKey
 		},
-		data: JSON.stringify({ q: text, lang: "en" }),
+		data: JSON.stringify({ q: text_data, lang: "en" }),
 		success: function(data) {
 			prepareResponse(data);
 			setResponse(data.result.speech);
@@ -141,6 +150,7 @@ function respond(val) {
       window.speechSynthesis.speak(msg);
 
     msg.onend = function (event) { 
+    	// debugger
     	switchRecognition();
 		};
       // while (window.speechSynthesis.speaking){
