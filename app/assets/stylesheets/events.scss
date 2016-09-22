@@ -76,6 +76,9 @@
 @media screen and (max-width: 768px) {
 	.question-context__choice {
 		margin: 0 !important;
+		div {
+			font-size: 20px;
+		}
 	}
 }
 
@@ -104,4 +107,33 @@
 		background-color: #6CAEC4;
 		margin-bottom: 30px;
 	}
+}
+.events {
+	margin-top: 30px;
+}
+.glow {
+	-webkit-animation: pulse 1s alternate infinite;
+	-moz-animation: pulse 1s alternate infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    color: rgba(255,255,255,1);
+    
+  }
+  100% {
+    color: rgba(255,255,255,0.24);
+    
+  }
+}
+  
+@-moz-keyframes pulse {
+  0% {
+    color: rgba(255,255,255,1);
+    
+  }
+  100% {
+    color: rgba(255,255,255,0.24);
+   
+  }
 }
