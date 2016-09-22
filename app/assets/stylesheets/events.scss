@@ -11,7 +11,7 @@
 }
 @media screen and (max-width: 768px) {
 	.title {
-		margin-top: 120px;
+		margin-top: 60px !important;
 		#main-text {
 			font-size: 60px;
 		}
@@ -25,7 +25,7 @@
 
 .HolyGrail-header {
   z-index: 1;
-  color: #FFF !important;
+  color: #FFF;
   font-size: 88px;
   padding: 48px;
 }
@@ -55,6 +55,12 @@
   order: -1;
 }
 
+.question-context {
+  display: flex;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.64);
+}
+
 .question-context__choice {
   margin: 16px;
   display: flex;
@@ -66,8 +72,11 @@
   height: 124px;
   width: 124px;
   transition: background-color 0.2s;
-  position: relative;
-  color: rgba(255, 255, 255, 0.64);
+}
+@media screen and (max-width: 768px) {
+	.question-context__choice {
+		margin: 0 !important;
+	}
 }
 
 .question-context__choice:hover {
@@ -85,4 +94,14 @@
 .microphone-btn {
 	font-size: 80px !important;
 	text-align: center;
+}
+.suggestions {
+	padding-left: 70px;
+	padding-right: 70px;
+	.suggestion {
+		width: 100%;
+		height: 100px;
+		background-color: #6CAEC4;
+		margin-bottom: 30px;
+	}
 }

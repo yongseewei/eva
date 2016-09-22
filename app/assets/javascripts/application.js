@@ -19,6 +19,7 @@
 $(function() {
 	$(document).on("click", ".question-context__choice", function() {
 		$(".HolyGrail-body").children().hide();
+		$(".HolyGrail-body").after('<ul class="list-group"><li class="list-group-item">Hi</li><li class="list-group-item">Hello</li></ul>');
 		
 	});
 });
