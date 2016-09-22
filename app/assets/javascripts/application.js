@@ -15,3 +15,10 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+$(function() {
+	$(document).on("click", ".question-context__choice", function() {
+		debugger;
+		$(this).children("div").html("HI");
+	});
+});
