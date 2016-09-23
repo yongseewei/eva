@@ -182,13 +182,17 @@ function respond(val) {
 		if (msg.text == "Hello there, what event you want to create?") {
 			$(".event-choice").fadeIn();
 			$(".interest-choice").hide();
+
 		} else if (msg.text == "Fine. Which party theme would your daughter prefer?") {
 			$(".event-choice").hide();
 			$(".interest-choice").fadeIn();
 		} else if (msg.text == "Here is the best proposal I've completed for you!") {
-
+			setTimeout(function() { $(".review-page").slideToggle(1000); }, 2000);
 		}
-		else {
+		else if (msg.text == "Great, I will inform the relevant suppliers for this proposal on your interest."){
+			$(".review-page").slideToggle();
+		}
+		else{
 			$(".event-choice").hide();
 			$(".interest-choice").hide();
 		}
