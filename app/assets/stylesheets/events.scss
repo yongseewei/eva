@@ -21,6 +21,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: fixed;
 }
 
 .HolyGrail-header {
@@ -121,22 +122,33 @@
 
 @-webkit-keyframes pulse {
   0% {
-    color: rgba(255,255,255,1);
+    background-color: dodgerblue;
+    
+  }
+  20% {
+    background-color: dodgerblue;
     
   }
   100% {
-    color: rgba(255,255,255,0.24);
+    background-color: #0d47a1;
     
   }
 }
   
 @-moz-keyframes pulse {
   0% {
-    color: rgba(255,255,255,1);
+    background-color: dodgerblue;
+    
+  }
+  20% {
+    background-color: dodgerblue;
     
   }
   100% {
-    color: rgba(255,255,255,0.24);
+    background-color: #0d47a1;
    
   }
+}
+.space {
+	height: 64px;
 }

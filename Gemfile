@@ -15,7 +15,12 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-ui-rails'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
 gem 'devise', '~> 4.2'
+
+
+gem "figaro"
+
 gem 'sdoc', '~> 0.4.0', group: :doc
+
 
 
 
