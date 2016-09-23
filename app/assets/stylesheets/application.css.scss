@@ -20,7 +20,10 @@
 
 body {
 	background-color: dodgerblue;
-  -webkit-animation: pulse 1.2s alternate infinite;
-  -moz-animation: pulse 1.2s alternate infinite;
+  
+}
+.listening {
+  -webkit-animation: pulse 1s alternate infinite;
+  -moz-animation: pulse 1s alternate infinite;
 }
 
