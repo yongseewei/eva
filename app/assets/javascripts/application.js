@@ -50,6 +50,12 @@ $(document).ready(function() {
         switchRecognition();
 
   });
+  $(".review-page").click(function(event) {
+    // if (window.speechSynthesis.speaking == false){
+    	    audioElement.play();
+        switchRecognition();
+
+  });
 
     // });
 
