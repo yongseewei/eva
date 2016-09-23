@@ -27,3 +27,10 @@ body {
   -moz-animation: pulse 1s alternate infinite;
 }
 
+#main-text{
+-webkit-user-select: none;
+-moz-user-select: none;
+}
+.event-choice, .interest-choice {
+	display: none;
+}
