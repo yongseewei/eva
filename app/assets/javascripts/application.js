@@ -68,7 +68,8 @@ function startRecognition() {
 
   	$("body").addClass("listening");
     recognition = new webkitSpeechRecognition();
-    // recognition.continuous = true;
+  // recognition.continuous = true;
+  // recognition.interimResults = true;
     recognition.onstart = function(event) {
         updateRec();
     };
