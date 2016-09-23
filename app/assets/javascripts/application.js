@@ -27,6 +27,9 @@ var baseUrl = "https://api.api.ai/v1/",
 var accessToken = "b9d899a8ae0a4559adbc257dfe0403ec";
 var subscriptionKey = "655502d27d9f4d32b091fdbf67fe0cba";
 var text = ""
+var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', 'https://a.clyp.it/f5gkxsoh.mp3');
+    audioElement.setAttribute('autoplay', 'autoplay');
 
 $(document).ready(function() {
 	$("#input").keypress(function(event) {
@@ -46,6 +49,7 @@ $(document).ready(function() {
 var temp ="";
 
 function startRecognition() {
+	audioElement.play();
 	recognition = new webkitSpeechRecognition();
 	recognition.continuous = true;
 	recognition.onstart = function(event) {
@@ -149,6 +153,7 @@ function respond(val) {
     msg.voiceURI = "native";
     msg.text = val;
     msg.lang = "en-US";
+    // debugger
     window.speechSynthesis.speak(msg);
 
     msg.onend = function (event) { 
